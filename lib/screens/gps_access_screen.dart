@@ -17,9 +17,7 @@ class GpsAccessScreen extends StatelessWidget {
 }
 
 class _AccesButton extends StatelessWidget {
-  const _AccesButton({
-    super.key,
-  });
+  const _AccesButton();
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +46,7 @@ class _AccesButton extends StatelessWidget {
 }
 
 class _EnableGpsMessage extends StatelessWidget {
-  const _EnableGpsMessage({
-    super.key,
-  });
+  const _EnableGpsMessage();
 
   @override
   Widget build(BuildContext context) {
