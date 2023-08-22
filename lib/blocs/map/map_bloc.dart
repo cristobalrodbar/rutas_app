@@ -15,7 +15,7 @@ class MapBloc extends Bloc<MapEvent, MapState> {
 
   MapBloc({
     required this.locationBloc,
-  }) : super(const MapState()) {
+  }) : super(const MapState(polylines: {})) {
     on<OnMapInitialzedEvent>(_onInitMap);
     on<OnStartFollowingUserEvent>(_onStartFollowingUser);
     on<OnStopFollowingUserEvent>(

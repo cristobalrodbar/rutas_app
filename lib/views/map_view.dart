@@ -5,8 +5,10 @@ import 'package:maps_flutter/blocs/map/map_bloc.dart';
 
 class MapView extends StatelessWidget {
   final LatLng initialLocation;
+  final Set<Polyline> polylines;
 
-  const MapView({super.key, required this.initialLocation});
+  const MapView(
+      {super.key, required this.initialLocation, required this.polylines});
 
   @override
   Widget build(BuildContext context) {
@@ -29,6 +31,8 @@ class MapView extends StatelessWidget {
             myLocationButtonEnabled: false,
             onMapCreated: (controller) =>
                 mapBloc.add(OnMapInitialzedEvent(controller)),
+
+            polylines: polylines,
 
             //TODO markers, polylines, cuando se mueve el mapa
           ),

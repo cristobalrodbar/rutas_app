@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:maps_flutter/blocs/blocs.dart';
 import 'package:maps_flutter/blocs/location/location_bloc.dart';
 import 'package:maps_flutter/views/views.dart';
 import 'package:maps_flutter/widgets/widgets.dart';
@@ -26,20 +27,25 @@ class _MapScreenState extends State<MapScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: BlocBuilder<LocationBloc, LocationState>(
-        builder: (context, state) {
-          if (state.lastKnownLocation == null) {
+        builder: (context, LocationState) {
+          if (LocationState.lastKnownLocation == null) {
             return const Center(child: Text('espere por favor'));
           }
 
-          return SingleChildScrollView(
-            child: Stack(
-              children: [
-                MapView(
-                  initialLocation: state.lastKnownLocation!,
+          return BlocBuilder<MapBloc, MapState>(
+            builder: (context, mapState) {
+              return SingleChildScrollView(
+                child: Stack(
+                  children: [
+                    MapView(
+                      initialLocation: LocationState.lastKnownLocation!,
+                      polylines: mapState.polylines.values.toSet(),
+                    ),
+                    //TODO botones...
+                  ],
                 ),
-                //TODO botones...
-              ],
-            ),
+              );
+            },
           );
 
           //return const MapView();
