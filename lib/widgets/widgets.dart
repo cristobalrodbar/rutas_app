@@ -1,3 +1,4 @@
-export './btn_location.dart';
-export './btn_followUser.dart';
-export './btn_toggleUserRoute.dart';
+export 'package:maps_flutter/widgets/searchbar.dart';
+export 'package:maps_flutter/widgets/btn_location.dart';
+export 'package:maps_flutter/widgets/btn_followUser.dart';
+export 'package:maps_flutter/widgets/btn_toggleUserRoute.dart';
