@@ -1,13 +1,13 @@
 name: maps_flutter
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=2.19.6 <3.0.0'
+  sdk: ">=2.19.6 <3.0.0"
 
 dependencies:
-  animate_do: ^3.0.2
+  animate_do: ^3.3.4
   bloc: ^8.1.2
   dio: ^5.3.2
   equatable: ^2.0.5
