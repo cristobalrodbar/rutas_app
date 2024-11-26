@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:maps_flutter/blocs/gps/gps_bloc.dart';
-import 'package:maps_flutter/blocs/location/location_bloc.dart';
-import 'package:maps_flutter/blocs/map/map_bloc.dart';
 import 'package:maps_flutter/screens/screens.dart';
+
+import 'blocs/blocs.dart';
 
 void main() {
   runApp(MultiBlocProvider(providers: [
@@ -11,7 +10,8 @@ void main() {
     BlocProvider(create: (context) => LocationBloc()),
     BlocProvider(
         create: (context) =>
-            MapBloc(locationBloc: BlocProvider.of<LocationBloc>(context)))
+            MapBloc(locationBloc: BlocProvider.of<LocationBloc>(context))),
+    BlocProvider(create: (context) => SearchBloc()),
   ], child: const MapsApp()));
 }
 
