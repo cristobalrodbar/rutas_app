@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:maps_flutter/blocs/blocs.dart';
 
 class ManualMarker extends StatelessWidget {
-  const ManualMarker({super.key});
+  const ManualMarker({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +19,7 @@ class ManualMarker extends StatelessWidget {
 }
 
 class _ManualMarkerBody extends StatelessWidget {
-  const _ManualMarkerBody({super.key});
+  const _ManualMarkerBody({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,8 +67,8 @@ class _ManualMarkerBody extends StatelessWidget {
 
 class _BtnBack extends StatelessWidget {
   const _BtnBack({
-    super.key,
-  });
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -79,7 +79,8 @@ class _BtnBack extends StatelessWidget {
           backgroundColor: Colors.white,
           child: IconButton(
               onPressed: () {
-                //TODO cancelar marcador manual
+                BlocProvider.of<SearchBloc>(context)
+                    .add(OnDeactivateManualMarkerEvent());
               },
               icon: const Icon(
                 Icons.arrow_back_ios_new,

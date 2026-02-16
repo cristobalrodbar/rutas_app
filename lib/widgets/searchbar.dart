@@ -25,7 +25,10 @@ class _SearchBarBody extends StatelessWidget {
     if (result.manual) {
       searchBloc.add(OnActivateManualMarkerEvent());
       return;
-    }
+    } /*  else {
+      searchBloc.add(OnDeactivateManualMarkerEvent());
+      return;
+    } */
   }
 
   @override
@@ -54,7 +57,7 @@ class _SearchBarBody extends StatelessWidget {
                       offset: Offset(0, 5))
                 ]),
             child: const Text(
-              '¿Dónde queires ir?',
+              '¿Dónde quieres ir?',
               style: TextStyle(color: Colors.black87),
             ),
           ),
